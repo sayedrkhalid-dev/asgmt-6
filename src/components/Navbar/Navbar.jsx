@@ -1,11 +1,20 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, Moon, Sun, ShoppingCart } from "lucide-react";
 
 const Navbar = ({ items }) => {
+  const [activeLink, setactiveLink] = useState(
+    localStorage.getItem("activeLink") || "home",
+  );
+
+  useEffect(() => localStorage.setItem("activeLink", activeLink), [activeLink]);
+
   return (
-    <nav className="border-b ">
+    <nav className="shadow-md">
       {/* Navbar container */}
-      <div className="w-full max-w-10/12 mx-auto">
-        <div className="navbar bg-base-100 shadow-sm">
+      <div className="w-full md:max-w-11/12 mx-auto flex items-center gap-2">
+        {/* Navbar content */}
+        <div className="navbar bg-base-100">
           {/* Navbar start */}
           <div className="navbar-start">
             <div className="dropdown">
@@ -13,23 +22,9 @@ const Navbar = ({ items }) => {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost lg:hidden"
+                className="btn btn-ghost lg:hidden p-2 rounded-lg"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  {" "}
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />{" "}
-                </svg>
+                <Menu size={20} />
               </div>
 
               {/* hamburger menu items */}
@@ -37,28 +32,24 @@ const Navbar = ({ items }) => {
                 tabIndex="-1"
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Parent</a>
-                  <ul className="p-2">
-                    <li>
-                      <a>Submenu 1</a>
-                    </li>
-                    <li>
-                      <a>Submenu 2</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a>Item 3</a>
-                </li>
+                {items.map((item) => (
+                  <li key={item.id}>
+                    <Link
+                      to={item.path}
+                      className={`link hover:bg-transparent no-underline text-base font-semibold capitalize bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text hover:text-transparent transition duration-300 ${activeLink === item.label ? "text-transparent" : ""}`}
+                      onClick={() => setactiveLink(item.label)}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Navbar brand */}
-            <a className="text-xl text-semibold">DigiTools</a>
+            <a className="text-3xl font-semibold bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent hidden lg:inline-block">
+              DigiTools
+            </a>
           </div>
 
           {/* Navbar center */}
@@ -66,19 +57,46 @@ const Navbar = ({ items }) => {
             <ul className="menu menu-horizontal px-1">
               {items.map((item) => (
                 <li key={item.id}>
-                  <a className="capitalize">{item.label}</a>
+                  <Link
+                    to={item.path}
+                    className={`link hover:bg-transparent no-underline text-base font-semibold capitalize bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text hover:text-transparent transition duration-300 ${activeLink === item.label ? "text-transparent" : ""}`}
+                    onClick={() => setactiveLink(item.label)}
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Navbar end */}
-          <div className="navbar-end gap-2">
-            <span>cart</span>
-            <a href="#">Login</a>
-            <a className="btn">Get Started</a>
+          <div className="navbar-end gap-4">
+            {/* Shopping cart */}
+            <ShoppingCart size={20} className="cursor-pointer" />
+
+            {/* Login link */}
+            <a href="#" className="text-sm font-semibold select-none">
+              Login
+            </a>
+
+            {/* Get Started button */}
+            <a className="btn hidden md:inline-flex bg-linear-to-r from-blue-500 to-purple-500 text-slate-50 rounded-3xl px-4 py-0">
+              Get Started
+            </a>
           </div>
         </div>
+
+        {/* Theme controller */}
+        <label className="swap swap-rotate cursor-pointer scale-60">
+          {/* this hidden checkbox controls the state */}
+          <input type="checkbox" className="" value="" />
+
+          {/* sun icon */}
+          <Sun size={20} className="swap-off h-10 w-10" />
+
+          {/* moon icon */}
+          <Moon size={20} className="swap-on h-10 w-10" />
+        </label>
       </div>
     </nav>
   );

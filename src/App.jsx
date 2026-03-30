@@ -1,4 +1,11 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Features from "./pages/Features";
+import Pricing from "./pages/Pricing";
+import Testimonials from "./pages/Testimonials";
+import FAQ from "./pages/FAQ";
 
 const nav_items = [
   {
@@ -35,10 +42,18 @@ const nav_items = [
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar items={nav_items} />
-      <h1 className="text-red-500 text-3xl font-bold">Hello world</h1>
-    </>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/questions" element={<FAQ />} />
+      </Routes>
+    </Router>
   );
 }
 
