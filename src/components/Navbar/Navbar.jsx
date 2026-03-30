@@ -10,7 +10,7 @@ const Navbar = ({ items }) => {
   useEffect(() => localStorage.setItem("activeLink", activeLink), [activeLink]);
 
   return (
-    <nav className="w-full sticky top-0 shadow-md">
+    <nav className="w-full sticky top-0 z-10 shadow-md">
       {/* Navbar container */}
       <div className="w-full py-1 max-w-11/12 mx-auto flex items-center justify-center gap-2">
         {/* Navbar content */}
@@ -47,7 +47,7 @@ const Navbar = ({ items }) => {
             </div>
 
             {/* Navbar brand */}
-            <a className="text-3xl font-semibold bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent hidden lg:inline-block">
+            <a className="text-3xl font-semibold bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent hidden md:inline-block">
               DigiTools
             </a>
           </div>
