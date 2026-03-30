@@ -10,9 +10,9 @@ const Navbar = ({ items }) => {
   useEffect(() => localStorage.setItem("activeLink", activeLink), [activeLink]);
 
   return (
-    <nav className="shadow-md">
+    <nav className="w-full sticky top-0 shadow-md">
       {/* Navbar container */}
-      <div className="w-full md:max-w-11/12 mx-auto flex items-center gap-2">
+      <div className="w-full py-1 max-w-11/12 mx-auto flex items-center justify-center gap-2">
         {/* Navbar content */}
         <div className="navbar bg-base-100">
           {/* Navbar start */}
