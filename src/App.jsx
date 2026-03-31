@@ -6,6 +6,7 @@ import Features from "./pages/Features";
 import Pricing from "./pages/Pricing";
 import Testimonials from "./pages/Testimonials";
 import FAQ from "./pages/FAQ";
+import { Suspense } from "react";
 
 const nav_items = [
   {
@@ -40,14 +41,35 @@ const nav_items = [
   },
 ];
 
+const fethProducts = async () => {
+  const res = await fetch("/data/products.json");
+  return res.json();
+};
+
 function App() {
+  const productsPromise = fethProducts();
+
   return (
     <Router>
       <Navbar items={nav_items} />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={"loading"}>
+              <Home productsPromise={productsPromise} />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <Suspense fallback={"loading"}>
+              <Products productsPromise={productsPromise} />
+            </Suspense>
+          }
+        />
         <Route path="/features" element={<Features />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/testimonials" element={<Testimonials />} />

@@ -2,7 +2,7 @@ import React from "react";
 
 const Stats = () => {
   return (
-    <section className="bg-linear-to-r from-blue-500 to-purple-500">
+    <section className="mt-10 bg-linear-to-r from-blue-500 to-purple-500 py-4">
       <div className="flex w-full">
         <div className="card rounded-box grid h-20 grow place-items-center">
           <h1 className="flex items-center justify-center text-4xl text-slate-50 font-bold">

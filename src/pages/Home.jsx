@@ -1,11 +1,13 @@
 import Banner from "../components/Banner/Banner";
 import Stats from "../components/Stats/Stats";
+import Products from "./Products";
 
-const Home = () => {
+const Home = ({ productsPromise }) => {
   return (
     <>
       <Banner />
       <Stats />
+      <Products productsPromise={productsPromise} />
     </>
   );
 };

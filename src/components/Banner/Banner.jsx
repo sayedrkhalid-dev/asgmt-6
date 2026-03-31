@@ -4,9 +4,9 @@ import banner_img from "../../assets/banner.png";
 const Banner = () => {
   return (
     <section>
-      <div className="w-full max-w-11/12 mx-auto h-[calc(100vh-4rem)] flex justify-between relative sm:static py-8">
+      <div className="w-full max-w-10/12 mx-auto mt-8 sm:mt-0 flex justify-between relative sm:static py-8">
         {/* Banner left - (Banner content) */}
-        <div className="w-full h-full flex flex-col justify-center gap-4">
+        <div className="w-full flex flex-col justify-center gap-4">
           {/* Banner Badge */}
           <p className="w-fit inline-flex items-center gap-3 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium shadow-sm border border-purple-300 backdrop-blur-md">
             {/* Animated Dot */}
@@ -52,11 +52,11 @@ const Banner = () => {
         </div>
 
         {/* Banner right - (Banner image) */}
-        <div className="w-full h-full flex justify-center items-center absolute sm:static to-0 left-0 -z-10">
+        <div className="w-full flex absolute sm:static to-0 left-0 -z-10">
           <img
             src={banner_img}
             alt="Banner"
-            className="w-full h-full sm:h-120 object-contain opacity-15 sm:opacity-75"
+            className="w-full sm:h-120 object-contain opacity-15 sm:opacity-75"
           />
         </div>
       </div>
