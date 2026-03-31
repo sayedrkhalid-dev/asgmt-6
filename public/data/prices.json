@@ -1,0 +1,49 @@
+{
+  "prices": [
+    {
+      "id": 1,
+      "name": "Starter Plan",
+      "description": "Get essential tools to start building resumes and portfolios",
+      "price": 9.99,
+      "period": "monthly",
+      "tag": "new",
+      "tagType": "new",
+      "features": [
+        "Basic resume templates",
+        "Limited ATS optimization",
+        "Export files PDF"
+      ],
+      "icon": "📦"
+    },
+    {
+      "id": 2,
+      "name": "Pro Plan",
+      "description": "Unlock advanced features for creating professional resumes and portfolios",
+      "price": 19.99,
+      "period": "monthly",
+      "tag": "popular",
+      "tagType": "popular",
+      "features": [
+        "Advanced resume templates",
+        "Full ATS optimization",
+        "Priority customer support"
+      ],
+      "icon": "🚀"
+    },
+    {
+      "id": 3,
+      "name": "Enterprise Plan",
+      "description": "Access complete solution for teams with premium tools and support",
+      "price": 49.99,
+      "period": "yearly",
+      "tag": "best seller",
+      "tagType": "best seller",
+      "features": [
+        "Unlimited resume creation",
+        "Team collaboration tools",
+        "Dedicated account manager"
+      ],
+      "icon": "🏢"
+    }
+  ]
+}

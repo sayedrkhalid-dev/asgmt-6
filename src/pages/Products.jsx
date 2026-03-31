@@ -1,4 +1,4 @@
-import { Suspense, use, useState } from "react";
+import { use, useState } from "react";
 import Product from "../components/Product/Product";
 import Cart from "../components/Cart/Cart";
 

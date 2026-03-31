@@ -8,6 +8,7 @@ import Testimonials from "./pages/Testimonials";
 import FAQ from "./pages/FAQ";
 import { Suspense } from "react";
 
+// Nab items
 const nav_items = [
   {
     id: 1,
@@ -41,13 +42,21 @@ const nav_items = [
   },
 ];
 
+// fetch products
 const fethProducts = async () => {
   const res = await fetch("/data/products.json");
   return res.json();
 };
 
+// fecth prices
+const fethPrices = async () => {
+  const res = await fetch("/data/prices.json");
+  return res.json();
+};
+
 function App() {
   const productsPromise = fethProducts();
+  const pricesPromise = fethPrices();
 
   return (
     <Router>
@@ -58,7 +67,10 @@ function App() {
           path="/"
           element={
             <Suspense fallback={"loading"}>
-              <Home productsPromise={productsPromise} />
+              <Home
+                productsPromise={productsPromise}
+                pricesPromise={pricesPromise}
+              />
             </Suspense>
           }
         />
@@ -71,7 +83,14 @@ function App() {
           }
         />
         <Route path="/features" element={<Features />} />
-        <Route path="/pricing" element={<Pricing />} />
+        <Route
+          path="/pricing"
+          element={
+            <Suspense fallback={"loading"}>
+              <Pricing pricesPromise={pricesPromise} />
+            </Suspense>
+          }
+        />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/questions" element={<FAQ />} />
       </Routes>
