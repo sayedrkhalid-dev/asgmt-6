@@ -1,4 +1,5 @@
 import Banner from "../components/Banner/Banner";
+import Footer from "../components/Footer/Footer";
 import Stats from "../components/Stats/Stats";
 import Workflow from "../components/Workflow/Workflow";
 import Pricing from "./Pricing";
@@ -12,6 +13,7 @@ const Home = ({ productsPromise, pricesPromise }) => {
       <Products productsPromise={productsPromise} />
       <Pricing pricesPromise={pricesPromise} />
       <Workflow />
+      <Footer />
     </>
   );
 };

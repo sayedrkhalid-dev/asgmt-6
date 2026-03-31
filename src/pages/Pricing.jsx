@@ -6,7 +6,7 @@ const Pricing = ({ pricesPromise }) => {
 
   return (
     <section>
-      <section className="w-full max-w-10/12 mx-auto my-10">
+      <div className="w-full max-w-10/12 mx-auto py-10 mt-16">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col justify-center-center items-center gap-4">
             {/* Banner title */}
@@ -28,7 +28,7 @@ const Pricing = ({ pricesPromise }) => {
             ))}
           </ul>
         </div>
-      </section>
+      </div>
     </section>
   );
 };

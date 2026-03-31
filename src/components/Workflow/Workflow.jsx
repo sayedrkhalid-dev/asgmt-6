@@ -1,6 +1,6 @@
 const Workflow = () => {
   return (
-    <section className="bg-linear-to-r from-blue-500 to-purple-500">
+    <section className="bg-linear-to-r from-blue-500 to-purple-500 py-16 mt-16">
       <div className="w-full max-w-10/12 mx-auto flex flex-col justify-center items-center text-center gap-4">
         {/* Workflow title */}
         <h1 className="text-2xl text-slate-50 md:text-3xl/snug lg:text-4xl/snug tracking-wide font-bold">
@@ -8,7 +8,7 @@ const Workflow = () => {
         </h1>
 
         {/* Workflow description */}
-        <p className="text-base/6 text-slate-300 tracking-wide px-32">
+        <p className="text-base/6 text-slate-300 tracking-wide md:px-32">
           Join thousands of professionals who are already using Digitools to
           work smarter. Start your free trial today.
         </p>

@@ -10,7 +10,7 @@ const Products = ({ productsPromise }) => {
   const addToCart = (product) => setCart((prev) => [...prev, product]);
 
   return (
-    <section className="w-full max-w-10/12 mx-auto my-10">
+    <section className="w-full max-w-10/12 mx-auto py-10 mt-16">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col justify-center-center items-center gap-4">
           {/* Banner title */}
