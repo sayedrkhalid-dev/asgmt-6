@@ -6,8 +6,8 @@
       "description": "Get essential tools to start building resumes and portfolios",
       "price": 9.99,
       "period": "monthly",
-      "tag": "new",
-      "tagType": "new",
+      "tag": "starter",
+      "tagType": "starter",
       "features": [
         "Basic resume templates",
         "Limited ATS optimization",
@@ -21,8 +21,8 @@
       "description": "Unlock advanced features for creating professional resumes and portfolios",
       "price": 19.99,
       "period": "monthly",
-      "tag": "popular",
-      "tagType": "popular",
+      "tag": "most popular",
+      "tagType": "pro",
       "features": [
         "Advanced resume templates",
         "Full ATS optimization",
@@ -36,8 +36,8 @@
       "description": "Access complete solution for teams with premium tools and support",
       "price": 49.99,
       "period": "yearly",
-      "tag": "best seller",
-      "tagType": "best seller",
+      "tag": "enterprice",
+      "tagType": "enterprice",
       "features": [
         "Unlimited resume creation",
         "Team collaboration tools",

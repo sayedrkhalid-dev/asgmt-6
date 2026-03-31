@@ -6,7 +6,7 @@ const Pricing = ({ pricesPromise }) => {
 
   return (
     <section>
-      <div className="w-full max-w-10/12 mx-auto py-10 mt-16">
+      <div className="w-full max-w-10/12 mx-auto py-0 mt-16">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col justify-center-center items-center gap-4">
             {/* Banner title */}
@@ -15,7 +15,7 @@ const Pricing = ({ pricesPromise }) => {
             </h1>
 
             {/* Banner description */}
-            <p className="text-slate-600 text-center lg:px-30">
+            <p className="text-gray-600 text-center lg:px-30">
               Choose the plan that fits your needs. Upgrade or downgrade
               anytime.
             </p>

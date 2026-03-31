@@ -4,7 +4,7 @@ import twitter from "../../assets/twitter.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-800 text-slate-50 py-10 pt-16">
+    <footer className="bg-gray-900 text-gray-50 py-0 pt-16">
       <div className="w-full max-w-10/12 mx-auto flex flex-col gap-10">
         <div className="grid sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6">
           {/* About */}
@@ -13,7 +13,7 @@ const Footer = () => {
             <a className="text-3xl font-semibold bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
               DigiTools
             </a>
-            <p className="text-slate-300">
+            <p className="text-gray-300">
               Premium digital tools for creators, professionals, and businesses.
               Work smarter with our suite of powerful tools.
             </p>
@@ -26,22 +26,22 @@ const Footer = () => {
                 Product
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Features
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Pricing
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Templates
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Integrations
               </a>
@@ -55,22 +55,22 @@ const Footer = () => {
                 Company
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 About
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Blog
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Careers
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Press
               </a>
@@ -84,22 +84,22 @@ const Footer = () => {
                 Resources
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Documentation
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Help Center
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Community
               </a>
             </li>
-            <li className="text-slate-300">
+            <li className="text-gray-300">
               <a href="#" className="hover:underline">
                 Contact
               </a>
@@ -108,7 +108,7 @@ const Footer = () => {
 
           {/* Social links */}
           <div className="flex flex-col gap-2 ">
-            <h1 className="text-xl font-semibold">DigiTools</h1>
+            <h1 className="text-xl font-semibold">Social Links</h1>
 
             <ul className="flex gap-2">
               <a href="#">
@@ -124,24 +124,24 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between  items-center gap-4 text-sm text-slate-400 border-t border-slate-700 pt-6">
+        <div className="flex flex-col md:flex-row justify-between  items-center gap-4 text-sm text-gray-400 border-t border-gray-700 py-6">
           <p>© 2026 Digitools. All rights reserved.</p>
 
           <ul className="flex gap-4">
             <li>
-              <a href="#" className="underline hover:text-slate-100">
+              <a href="#" className="underline hover:text-gray-100">
                 Privacy Policy
               </a>
             </li>
 
             <li>
-              <a href="#" className="underline hover:text-slate-100">
+              <a href="#" className="underline hover:text-gray-100">
                 Terms of Service
               </a>
             </li>
 
             <li>
-              <a href="#" className="underline hover:text-slate-100">
+              <a href="#" className="underline hover:text-gray-100">
                 Cookies
               </a>
             </li>

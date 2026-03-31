@@ -1,14 +1,15 @@
 import { Check } from "lucide-react";
 
 const Price = ({ price }) => {
-  console.log(price);
   return (
-    <li className="card bg-base-100 border border-slate-300 shadow-md relative">
+    <li
+      className={`card bg-base-100 ${price.tagType === "pro" && "bg-linear-to-r from-blue-500 to-purple-500"} border border-gray-300 shadow-md relative`}
+    >
       {/* Product body */}
       <div className="card-body mt-8">
         {/* Product badge */}
         <span
-          className={`badge badge-md badge-soft border flex justify-center items-center capitalize font-nornal absolute top-4 right-4 shadow-md ${price.tag === "new" ? "bg-green-100 border-green-300 text-green-500" : price.tag === "popular" ? "bg-purple-100 border-purple-300 text-purple-500" : "bg-amber-100 border-amber-300 text-amber-500"}`}
+          className={`badge badge-md badge-soft border flex justify-center items-center capitalize font-nornal absolute top-0 right-[50%] trangray-x-[50%] trangray-y-[-50%] shadow-md ${price.tagType === "starter" ? "bg-green-100 border-green-300 text-green-500" : price.tagType === "pro" ? "bg-purple-100 border-purple-300 text-purple-500" : "bg-amber-100 border-amber-300 text-amber-500"}`}
         >
           {price.tag}
         </span>
@@ -16,17 +17,27 @@ const Price = ({ price }) => {
         {/* Product name, des, price */}
         <div className="flex flex-col gap-2">
           {/* Product name */}
-          <h2 className="text-xl font-semibold">{price.name}</h2>
+          <h2
+            className={`text-xl font-semibold ${price.tagType === "pro" && "text-gray-50"}`}
+          >
+            {price.name}
+          </h2>
 
           {/* Product description */}
-          <p className="text-sm text-slate-500 w-60 h-12">
+          <p
+            className={`text-sm w-60 h-12 ${price.tagType === "pro" && "text-gray-200"}`}
+          >
             {price.description}
           </p>
 
           {/* Product price */}
-          <span className="text-xl">
+          <span
+            className={`text-xl ${price.tagType === "pro" && "text-gray-50"}`}
+          >
             ${price.price}
-            <span className="text-sm text-slate-400 capitalize">
+            <span
+              className={`text-sm capitalize ${price.tagType === "pro" && "text-gray-300"}`}
+            >
               /{price.period}
             </span>
           </span>
@@ -36,16 +47,26 @@ const Price = ({ price }) => {
         <ul className="mt-6 flex flex-col gap-2">
           {price.features.map((feature, index) => (
             <li key={index} className="flex items-center gap-2 static">
-              <Check size={18} stroke="blue" />
-              <span className="text-sm text-slate-600">{feature}</span>
+              <Check size={18} stroke="gray" />
+              <span
+                className={`text-sm ${price.tagType === "pro" && "text-gray-50"}`}
+              >
+                {feature}
+              </span>
             </li>
           ))}
         </ul>
 
         {/* Buy now button */}
-        <div className="rounded-3xl bg-linear-to-r from-blue-500 to-purple-500 text-slate-50 shadow shadow-purple-400 hover:shadow-md hover:translate-y-0.5 transition-all duration-150 mt-6">
+        <div
+          className={`rounded-3xl ${price.tagType !== "pro" ? "bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow-md shadow-purple-400 hover:shadow-md" : "bg-gray-50"} hover:trangray-y-0.5 transition-all duration-150 mt-6`}
+        >
           <button className="w-full text-center text-base rounded-3xl px-4 py-2 font-semibold transition-all duration-150 cursor-pointer">
-            price
+            {price.tagType === "starter"
+              ? "Get Started Free"
+              : price.tagType === "pro"
+                ? "Start Pro Trial"
+                : "Contact Sales"}
           </button>
         </div>
       </div>

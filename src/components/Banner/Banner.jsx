@@ -25,7 +25,7 @@ const Banner = () => {
           </h1>
 
           {/* Banner description */}
-          <p className="text-base/6 tracking-wide text-slate-600">
+          <p className="text-base/6 tracking-wide text-gray-600">
             Access premium AI tools, design assets, templates, and productivity{" "}
             <br />
             software—all in one place. Start creating faster today. <br />
@@ -35,15 +35,15 @@ const Banner = () => {
           {/* Banner buttons */}
           <div className="flex gap-2 flex-wrap">
             {/* Primary button */}
-            <div className="inline-block p-0.5 rounded-3xl bg-linear-to-r from-blue-500 to-purple-500 text-slate-50 shadow shadow-purple-400 hover:shadow-md hover:translate-y-0.5 transition-all duration-150">
+            <div className="inline-block p-0.5 rounded-3xl bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow shadow-purple-400 hover:shadow-md hover:trangray-y-0.5 transition-all duration-150">
               <button className="flex items-center gap-2 rounded-3xl px-4 py-2 font-semibold transition-all duration-150 cursor-pointer">
                 Explore Products
               </button>
             </div>
 
             {/* Primary button outlined */}
-            <div className="inline-block p-0.5 rounded-3xl bg-linear-to-r from-blue-500 to-purple-500 shadow-purple-400 hover:shadow-md hover:translate-y-0.5 transition-all duration-150">
-              <button className="flex items-center gap-2 rounded-3xl px-4 py-2 bg-base-100 text-slate-700 hover:text-slate-900 font-semibold  transition-all duration-150 cursor-pointer">
+            <div className="inline-block p-0.5 rounded-3xl bg-linear-to-r from-blue-500 to-purple-500 shadow-purple-400 hover:shadow-md hover:trangray-y-0.5 transition-all duration-150 ">
+              <button className="flex items-center gap-2 rounded-3xl px-4 py-2 bg-base-100 text-gray-700 hover:text-gray-900 font-semibold  transition-all duration-150 cursor-pointer">
                 <Play size={20} />
                 Watch Demo
               </button>

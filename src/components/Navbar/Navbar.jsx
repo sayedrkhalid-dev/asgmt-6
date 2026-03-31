@@ -10,7 +10,7 @@ const Navbar = ({ items }) => {
   useEffect(() => localStorage.setItem("activeLink", activeLink), [activeLink]);
 
   return (
-    <nav className="w-full sticky top-0 z-10 bg-slate-50 shadow-md">
+    <nav className="w-full sticky top-0 z-10 bg-gray-50 shadow-md">
       {/* Navbar container */}
       <div className="w-full py-1 max-w-10/12 mx-auto flex items-center justify-center gap-2">
         {/* Navbar content */}
@@ -22,9 +22,9 @@ const Navbar = ({ items }) => {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost lg:hidden p-2 rounded-lg"
+                className="btn btn-ghost xl:hidden p-2 rounded-lg"
               >
-                <Menu size={20} />
+                <Menu size={24} stroke="blue" />
               </div>
 
               {/* hamburger menu items */}
@@ -53,7 +53,7 @@ const Navbar = ({ items }) => {
           </div>
 
           {/* Navbar center */}
-          <div className="navbar-center hidden lg:flex">
+          <div className="navbar-center hidden xl:flex">
             <ul className="menu menu-horizontal px-1">
               {items.map((item) => (
                 <li key={item.id}>
@@ -72,7 +72,12 @@ const Navbar = ({ items }) => {
           {/* Navbar end */}
           <div className="navbar-end gap-4">
             {/* Shopping cart */}
-            <ShoppingCart size={20} className="cursor-pointer" />
+            <div className="relative">
+              <ShoppingCart size={20} className="cursor-pointer" />
+              <span className="flex justify-center items-center absolute top-[-50%] right-[-50%] w-5 h-5 bg-purple-500 text-sm font-semibold text-gray-50 rounded-full">
+                {/* {cart.length} */}0
+              </span>
+            </div>
 
             {/* Login link */}
             <a href="#" className="text-sm font-semibold select-none">
@@ -80,7 +85,7 @@ const Navbar = ({ items }) => {
             </a>
 
             {/* Get Started button */}
-            <a className="btn hidden md:inline-flex bg-linear-to-r from-blue-500 to-purple-500 text-slate-50 rounded-3xl px-4 py-0">
+            <a className="btn hidden md:inline-flex bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 rounded-3xl px-4 py-0">
               Get Started
             </a>
           </div>
