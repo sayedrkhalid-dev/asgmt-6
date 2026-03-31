@@ -5,7 +5,7 @@ const Product = ({ product, addToCart }) => {
   const [isPurchased, setIsperchased] = useState(false);
 
   return (
-    <li className="card bg-base-100 border border-gray-300 shadow-md relative">
+    <li className="card bg-base-100 border border-gray-300 shadow-md relative transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
       {/* Product body */}
       <div className="card-body mt-8">
         {/* Product icon */}
