@@ -9,7 +9,7 @@ const Cart = ({ cart, removeFromCart, updateQuantity }) => {
 
   return (
     <div className="flex justify-center">
-      <div className="card card-border bg-base-100 w-10/12">
+      <div className="card card-border bg-base-100 w-full lg:w-8/12">
         {cart.length === 0 ? (
           <div className="card-body">
             <div className="flex flex-col justify-center items-center gap-8">
