@@ -1,5 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 import Product from "./Product";
+import { toast } from "react-toastify";
 
 const Cart = ({ cart, removeFromCart, updateQuantity }) => {
   const grandTotal = cart
@@ -33,11 +34,19 @@ const Cart = ({ cart, removeFromCart, updateQuantity }) => {
               ))}
             </ul>
             <div className="flex flex-col gap-4 mt-6">
-              <span className="text-xl text-right font-semibold">
-                <span className="text-base text-gray-700">Total:</span> $
-                {grandTotal}
-              </span>
-              <button className="btn border-0 p-0.5 bg-gradient text-gray-50 font-semibold px-6 py-2 rounded-full shadow-md shadow-purple-400 cursor-pointer transition-all duration-300 hover:-translate-y-0.5">
+              <div className="flex items-center justify-end gap-2">
+                <span className="text-base font-semibold text-gray-700">
+                  Total:
+                </span>
+                <span className="text-xl font-bold">${grandTotal}</span>
+              </div>
+
+              <button
+                className="btn border-0 p-0.5 bg-gradient text-gray-50 font-semibold px-6 py-2 rounded-full shadow-md shadow-purple-400 cursor-pointer transition-all duration-300 hover:-translate-y-0.5"
+                onClick={() =>
+                  toast.success("Successfully orderd your products")
+                }
+              >
                 Proceed to Checkout
               </button>
             </div>
