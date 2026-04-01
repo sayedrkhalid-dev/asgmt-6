@@ -1,15 +1,23 @@
 import { Check } from "lucide-react";
 
 const Price = ({ price }) => {
+  const badge = {
+    starter: "bg-green-100 border-green-300 text-green-500",
+    pro: "bg-purple-100 border-purple-300 text-purple-600",
+    enterprise: "bg-amber-100 border-amber-300 text-amber-500",
+  };
+
+  console.log(price);
+
   return (
     <li
-      className={`card bg-base-100 ${price.tagType === "pro" && "bg-linear-to-r from-blue-500 to-purple-500"} border border-slate-300 shadow-md relative transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl ${price.tagType === "pro" && "scale-105 shadow-2xl"}`}
+      className={`card bg-base-100 ${price.tagType === "pro" && "bg-linear-to-r from-blue-600 to-purple-600"} border border-slate-300 shadow-md transition duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-xl ${price.tagType === "pro" && "shadow-2xl"}`}
     >
       {/* Product body */}
       <div className="card-body mt-8">
         {/* Product badge */}
         <span
-          className={`badge badge-md badge-soft border flex justify-center items-center capitalize font-nornal absolute top-0 right-[50%] translate-x-[50%] translate-y-[-50%] shadow-md ${price.tagType === "starter" ? "bg-green-100 border-green-300 text-green-500" : price.tagType === "pro" ? "bg-purple-100 border-purple-300 text-purple-500" : "bg-amber-100 border-amber-300 text-amber-500"}`}
+          className={`absolute top-0 right-[50%] translate-x-[50%] translate-y-[-50%] px-4 py-1 border font-semibold capitalize rounded-full ${price.tagType === "starter" ? badge.starter : price.tagType === "pro" ? badge.pro : badge.enterprise}`}
         >
           {price.tag}
         </span>
@@ -61,17 +69,15 @@ const Price = ({ price }) => {
         </ul>
 
         {/* Buy now button */}
-        <div
-          className={`rounded-3xl ${price.tagType !== "pro" ? "bg-linear-to-r from-blue-500 to-purple-500 text-slate-50 shadow-md shadow-purple-400 hover:shadow-md" : "bg-slate-50"} hover:translate-y-0.5 transition-all duration-150 mt-6`}
+        <button
+          className={`btn border-0 p-0.5 font-semibold px-6 py-2 rounded-full shadow-md shadow-purple-400 cursor-pointer ${price.tagType !== "pro" ? " bg-gradient text-gray-50" : "bg-gray-50 text-gray-900"}`}
         >
-          <button className="w-full text-center text-base rounded-3xl px-4 py-2 font-semibold transition-all duration-150 cursor-pointer">
-            {price.tagType === "starter"
-              ? "Get Started Free"
-              : price.tagType === "pro"
-                ? "Start Pro Trial"
-                : "Contact Sales"}
-          </button>
-        </div>
+          {price.tagType === "starter"
+            ? "Get Started Free"
+            : price.tagType === "pro"
+              ? "Start Pro Trial"
+              : "Contact Sales"}
+        </button>
       </div>
     </li>
   );

@@ -4,13 +4,13 @@ import twitter from "../../assets/twitter.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-50 py-0 pt-16">
-      <div className="w-full max-w-10/12 mx-auto flex flex-col gap-10">
+    <footer className="bg-gray-900 text-gray-50">
+      <div className="w-full max-w-10/12 mx-auto pt-16 flex flex-col gap-10">
         <div className="grid sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6">
           {/* About */}
           <div className="col-span-2 flex flex-col gap-2 ">
             {/* Footer brand */}
-            <a className="text-3xl font-semibold bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+            <a className="text-3xl font-semibold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               DigiTools
             </a>
             <p className="text-gray-300">

@@ -1,16 +1,11 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { Menu, Moon, Sun, ShoppingCart } from "lucide-react";
+import { useState } from "react";
 
 const Navbar = ({ items }) => {
-  const [activeLink, setactiveLink] = useState(
-    localStorage.getItem("activeLink") || "home",
-  );
-
-  useEffect(() => localStorage.setItem("activeLink", activeLink), [activeLink]);
+  const [activeLink, setactiveLink] = useState("home");
 
   return (
-    <nav className="w-full sticky top-0 z-10 bg-gray-50 shadow-md">
+    <nav className="sticky top-0 z-10 bg-gray-50 shadow-md">
       {/* Navbar container */}
       <div className="w-full py-1 max-w-10/12 mx-auto flex items-center justify-center gap-2">
         {/* Navbar content */}
@@ -34,20 +29,19 @@ const Navbar = ({ items }) => {
               >
                 {items.map((item) => (
                   <li key={item.id}>
-                    <Link
-                      to={item.path}
-                      className={`link hover:bg-transparent no-underline text-base font-semibold capitalize bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text hover:text-transparent transition duration-300 ${activeLink === item.label ? "text-transparent" : ""}`}
+                    <a
+                      className={`link hover:bg-transparent no-underline text-base font-semibold capitalize bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text hover:text-transparent transition duration-300 ${activeLink === item.label ? "text-transparent" : ""}`}
                       onClick={() => setactiveLink(item.label)}
                     >
                       {item.label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Navbar brand */}
-            <a className="text-3xl font-semibold bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent hidden md:inline-block">
+            <a className="text-3xl font-semibold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hidden md:inline-block">
               DigiTools
             </a>
           </div>
@@ -57,13 +51,12 @@ const Navbar = ({ items }) => {
             <ul className="menu menu-horizontal px-1">
               {items.map((item) => (
                 <li key={item.id}>
-                  <Link
-                    to={item.path}
-                    className={`link hover:bg-transparent no-underline text-base font-semibold capitalize bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text hover:text-transparent transition duration-300 ${activeLink === item.label ? "text-transparent" : ""}`}
+                  <a
+                    className={`link hover:bg-transparent no-underline text-base font-semibold capitalize bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text hover:text-transparent transition duration-300 ${activeLink === item.label ? "text-transparent" : ""}`}
                     onClick={() => setactiveLink(item.label)}
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -74,7 +67,7 @@ const Navbar = ({ items }) => {
             {/* Shopping cart */}
             <div className="relative">
               <ShoppingCart size={20} className="cursor-pointer" />
-              <span className="flex justify-center items-center absolute top-[-50%] right-[-50%] w-5 h-5 bg-purple-500 text-sm font-semibold text-gray-50 rounded-full">
+              <span className="flex justify-center items-center absolute top-[-50%] right-[-50%] w-5 h-5 bg-purple-600 text-sm font-semibold text-gray-50 rounded-full">
                 {/* {cart.length} */}0
               </span>
             </div>
@@ -85,9 +78,9 @@ const Navbar = ({ items }) => {
             </a>
 
             {/* Get Started button */}
-            <a className="btn hidden md:inline-flex bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 rounded-3xl px-4 py-0">
+            <button className="btn border-0 p-0.5 bg-gradient text-gray-50 font-semibold px-6 py-2 rounded-full shadow-md shadow-purple-400 cursor-pointer">
               Get Started
-            </a>
+            </button>
           </div>
         </div>
 

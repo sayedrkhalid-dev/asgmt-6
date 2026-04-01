@@ -2,18 +2,24 @@ import { Check } from "lucide-react";
 import { useState } from "react";
 
 const Product = ({ product, addToCart }) => {
-  const [isPurchased, setIsperchased] = useState(false);
+  const [isPurchased, setIsPurchased] = useState(false);
+
+  const badge = {
+    new: "bg-green-100 border-green-300 text-green-500",
+    popular: "bg-purple-100 border-purple-300 text-purple-600",
+    best_seller: "bg-amber-100 border-amber-300 text-amber-500",
+  };
 
   return (
-    <li className="card bg-base-100 border border-gray-300 shadow-md relative transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
+    <li className="relative card bg-base-100 border border-gray-300 shadow-md transition duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-xl">
       {/* Product body */}
       <div className="card-body mt-8">
         {/* Product icon */}
-        <span className="text-xl">{product.icon}</span>
+        <span className="text-2xl">{product.icon}</span>
 
         {/* Product badge */}
         <span
-          className={`badge badge-md badge-soft border flex justify-center items-center capitalize font-nornal absolute top-4 right-4 shadow-md ${product.tag === "new" ? "bg-green-100 border-green-300 text-green-500" : product.tag === "popular" ? "bg-purple-100 border-purple-300 text-purple-500" : "bg-amber-100 border-amber-300 text-amber-500"}`}
+          className={`absolute top-4 right-4 px-4 py-1 border font-semibold capitalize rounded-full ${product.tagType === "new" ? badge.new : product.tagType === "popular" ? badge.popular : badge.best_seller}`}
         >
           {product.tag}
         </span>
@@ -42,23 +48,22 @@ const Product = ({ product, addToCart }) => {
           {product.features.map((feature, index) => (
             <li key={index} className="flex items-center gap-2 static">
               <Check size={18} stroke="blue" />
-              <span className="text-sm text-gray-600">{feature}</span>
+              <span className="text-sm text-gray-700">{feature}</span>
             </li>
           ))}
         </ul>
 
         {/* Buy now button */}
-        <div className="rounded-3xl bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow shadow-purple-400 hover:shadow-md hover:trangray-y-0.5 transition-all duration-150 mt-6">
-          <button
-            className="w-full text-center text-base rounded-3xl px-4 py-2 font-semibold transition-all duration-150 cursor-pointer"
-            onClick={() => {
-              addToCart(product);
-              setIsperchased(true);
-            }}
-          >
-            {isPurchased ? "Perchased" : "Buy Now"}
-          </button>
-        </div>
+
+        <button
+          className="btn border-0 p-0.5 bg-gradient text-gray-50 font-semibold px-6 py-2 rounded-full shadow-md shadow-purple-400 cursor-pointer"
+          onClick={() => {
+            addToCart(product);
+            setIsPurchased(true);
+          }}
+        >
+          {isPurchased ? "Purchased" : "Buy Now"}
+        </button>
       </div>
     </li>
   );

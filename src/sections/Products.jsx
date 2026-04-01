@@ -1,7 +1,6 @@
 import { use, useState } from "react";
 import Product from "../components/Product/Product";
 import Cart from "../components/Cart/Cart";
-import Navbar from "../components/Navbar/Navbar";
 
 const Products = ({ productsPromise }) => {
   const { products } = use(productsPromise);
@@ -13,26 +12,26 @@ const Products = ({ productsPromise }) => {
     setCart((cart) => cart.filter((item) => item.id !== product.id));
 
   return (
-    <section className="w-full max-w-10/12 mx-auto py-0 mt-16">
-      <div className="flex flex-col gap-8">
+    <section>
+      <div className="w-full max-w-10/12 mx-auto my-4 py-4 flex flex-col gap-8">
         <div className="flex flex-col justify-center-center items-center gap-4">
-          {/* Banner title */}
+          {/* title */}
           <h1 className="text-2xl md:text-3xl/snug lg:text-4xl/snug tracking-wide font-bold text-center">
             Premium Digital Tools
           </h1>
 
-          {/* Banner description */}
-          <p className="text-gray-600 text-center lg:px-30">
+          {/* description */}
+          <p className="text-gray-700 text-center lg:px-30">
             Choose from our curated collection of premium digital products
             designed to boost your productivity and creativity.
           </p>
 
-          {/* Banner buttons */}
+          {/* buttons */}
           <div className="flex gap-2 bg-gray-200 p-1 rounded-full">
             {/* Primary button */}
             <button
               onClick={() => setActiveTab("products")}
-              className={`${activeTab === "products" ? "bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow-sm shadow-blue-500/50" : "bg-transparent text-gray-700"} font-semibold px-6 py-2 rounded-full cursor-pointer hover:shadow-md transition duration-300`}
+              className={`font-semibold px-6 py-2 rounded-full cursor-pointer transition-all duration-300 ${activeTab === "products" ? "bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow-sm shadow-blue-500/50 hover:shadow-md" : "bg-transparent text-gray-900"}`}
             >
               Products
             </button>
@@ -40,7 +39,7 @@ const Products = ({ productsPromise }) => {
             {/* Primary button outlined */}
             <button
               onClick={() => setActiveTab("cart")}
-              className={`${activeTab === "cart" ? "bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow-sm shadow-blue-500/50" : "bg-transparent text-gray-700"} font-semibold px-6 py-2 rounded-full cursor-pointer hover:shadow-md transition duration-300`}
+              className={`font-semibold px-6 py-2 rounded-full cursor-pointer transition-all duration-300 ${activeTab === "cart" ? "bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow-sm shadow-blue-500/50" : "bg-transparent text-gray-700"}`}
             >
               Cart ({cart.length})
             </button>

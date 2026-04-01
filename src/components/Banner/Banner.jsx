@@ -1,10 +1,10 @@
-import { Play } from "lucide-react";
 import banner_img from "../../assets/banner.png";
+import { Play } from "lucide-react";
 
 const Banner = () => {
   return (
     <section>
-      <div className="w-full max-w-10/12 mx-auto mt-8 sm:mt-0 flex justify-between relative sm:static py-8">
+      <div className="w-full max-w-10/12 mx-auto my-4 py-4 flex justify-between relative sm:static">
         {/* Banner left - (Banner content) */}
         <div className="w-full flex flex-col justify-center gap-4">
           {/* Banner Badge */}
@@ -12,7 +12,7 @@ const Banner = () => {
             {/* Animated Dot */}
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-95"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-600"></span>
             </span>
 
             {/* Text */}
@@ -25,7 +25,7 @@ const Banner = () => {
           </h1>
 
           {/* Banner description */}
-          <p className="text-base/6 tracking-wide text-gray-600">
+          <p className="text-base/6 tracking-wide text-gray-700">
             Access premium AI tools, design assets, templates, and productivity{" "}
             <br />
             software—all in one place. Start creating faster today. <br />
@@ -33,21 +33,21 @@ const Banner = () => {
           </p>
 
           {/* Banner buttons */}
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-2">
             {/* Primary button */}
-            <div className="inline-block p-0.5 rounded-3xl bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow shadow-purple-400 hover:shadow-md hover:trangray-y-0.5 transition-all duration-150">
-              <button className="flex items-center gap-2 rounded-3xl px-4 py-2 font-semibold transition-all duration-150 cursor-pointer">
-                Explore Products
-              </button>
-            </div>
+            <button className="btn border-0 p-0.5 bg-gradient text-gray-50 font-semibold px-6 py-2 rounded-full shadow-md shadow-purple-400 cursor-pointer transition-all duration-300 hover:-translate-y-0.5">
+              Explore Products
+            </button>
 
-            {/* Primary button outlined */}
-            <div className="inline-block p-0.5 rounded-3xl bg-linear-to-r from-blue-500 to-purple-500 shadow-purple-400 hover:shadow-md hover:trangray-y-0.5 transition-all duration-150 ">
-              <button className="flex items-center gap-2 rounded-3xl px-4 py-2 bg-base-100 text-gray-700 hover:text-gray-900 font-semibold  transition-all duration-150 cursor-pointer">
-                <Play size={20} />
-                Watch Demo
-              </button>
-            </div>
+            {/* Secondary button outlined */}
+            <button className="btn border-0 p-0.5 bg-gradient shadow-md shadow-purple-400 rounded-full cursor-pointer transition-all duration-300 hover:-translate-y-0.5">
+              <span className="bg-gray-50 rounded-full">
+                <span className="px-6 py-2 flex items-center gap-2 bg-gradient bg-clip-text text-transparent">
+                  <Play size={20} stroke="blue" />
+                  Watch Demo
+                </span>
+              </span>
+            </button>
           </div>
         </div>
 

@@ -1,12 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home";
-import Products from "./pages/Products";
-import Features from "./pages/Features";
-import Pricing from "./pages/Pricing";
-import Testimonials from "./pages/Testimonials";
-import FAQ from "./pages/FAQ";
+import Banner from "./components/Banner/Banner";
+import Stats from "./components/Stats/Stats";
+import Workflow from "./components/Workflow/Workflow";
+import Footer from "./components/Footer/Footer";
+import Home from "./sections/Home";
+import Products from "./sections/Products";
+import Features from "./sections/Features";
+import Pricing from "./sections/Pricing";
+import Testimonials from "./sections/Testimonials";
+import FAQ from "./sections/FAQ";
 import { Suspense } from "react";
+import GetStart from "./sections/GetStart";
 
 // Nab items
 const nav_items = [
@@ -59,42 +63,25 @@ function App() {
   const pricesPromise = fethPrices();
 
   return (
-    <Router>
+    <>
       <Navbar items={nav_items} />
+      <Banner />
+      <Stats />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Suspense fallback={"loading"}>
-              <Home
-                productsPromise={productsPromise}
-                pricesPromise={pricesPromise}
-              />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/products"
-          element={
-            <Suspense fallback={"loading"}>
-              <Products productsPromise={productsPromise} />
-            </Suspense>
-          }
-        />
-        <Route path="/features" element={<Features />} />
-        <Route
-          path="/pricing"
-          element={
-            <Suspense fallback={"loading"}>
-              <Pricing pricesPromise={pricesPromise} />
-            </Suspense>
-          }
-        />
-        <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/questions" element={<FAQ />} />
-      </Routes>
-    </Router>
+      <Suspense fallback="Loading...">
+        <Products productsPromise={productsPromise} />
+      </Suspense>
+
+      <Suspense fallback="Loading...">
+        <Pricing pricesPromise={pricesPromise} />
+      </Suspense>
+
+      <GetStart />
+
+      <Workflow />
+
+      <Footer />
+    </>
   );
 }
 

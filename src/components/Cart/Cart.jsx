@@ -27,7 +27,7 @@ const Cart = ({ cart, removeToCart }) => {
                     </h2>
 
                     {/* Product price */}
-                    <span className="font-semibold text-gray-600">
+                    <span className="font-semibold text-gray-700">
                       ${product.price}
                     </span>
                   </div>
@@ -48,7 +48,7 @@ const Cart = ({ cart, removeToCart }) => {
             {/* Total price */}
             <span className="text-right font-semibold">Total : $</span>
 
-            <div className="inline-block p-0.5 rounded-3xl bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow shadow-purple-400 hover:shadow-md hover:trangray-y-0.5 transition-all duration-150">
+            <div className="inline-block p-0.5 rounded-3xl bg-linear-to-r from-blue-600 to-purple-600 text-gray-50 shadow shadow-purple-400 hover:shadow-md hover:trangray-y-0.5 transition-all duration-150">
               <button className="rounded-3xl px-4 py-2 font-semibold transition-all duration-150 cursor-pointer">
                 Proceed to Checkout
               </button>
