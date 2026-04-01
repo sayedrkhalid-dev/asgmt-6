@@ -1,7 +1,7 @@
 import { Menu, Moon, Sun, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 
-const Navbar = ({ items }) => {
+const Navbar = ({ items, cart }) => {
   const [activeLink, setactiveLink] = useState("home");
 
   return (
@@ -68,7 +68,7 @@ const Navbar = ({ items }) => {
             <div className="relative">
               <ShoppingCart size={20} className="cursor-pointer" />
               <span className="flex justify-center items-center absolute top-[-50%] right-[-50%] w-5 h-5 bg-purple-600 text-sm font-semibold text-gray-50 rounded-full">
-                {/* {cart.length} */}0
+                {cart.length}
               </span>
             </div>
 

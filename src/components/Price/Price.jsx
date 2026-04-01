@@ -7,8 +7,6 @@ const Price = ({ price }) => {
     enterprise: "bg-amber-100 border-amber-300 text-amber-500",
   };
 
-  console.log(price);
-
   return (
     <li
       className={`card bg-base-100 ${price.tagType === "pro" && "bg-linear-to-r from-blue-600 to-purple-600"} border border-slate-300 shadow-md transition duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-xl ${price.tagType === "pro" && "shadow-2xl"}`}

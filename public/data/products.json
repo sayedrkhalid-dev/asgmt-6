@@ -5,6 +5,7 @@
       "name": "Starter Resume Kit",
       "description": "Build clean professional resumes quickly with beginner friendly tools",
       "price": 9.99,
+      "quantity": 1,
       "period": "one-time",
       "tag": "new",
       "tagType": "new",
@@ -20,6 +21,7 @@
       "name": "Pro Resume Builder",
       "description": "Create advanced resumes using powerful tools and modern templates",
       "price": 19.99,
+      "quantity": 1,
       "period": "monthly",
       "tag": "popular",
       "tagType": "popular",
@@ -35,6 +37,7 @@
       "name": "Career Boost Pack",
       "description": "Enhance job applications with complete tools and expert guidance",
       "price": 49.99,
+      "quantity": 1,
       "period": "yearly",
       "tag": "best seller",
       "tagType": "best seller",
@@ -50,6 +53,7 @@
       "name": "Portfolio Builder",
       "description": "Design beautiful portfolios easily with customizable layouts and components",
       "price": 14.99,
+      "quantity": 1,
       "period": "one-time",
       "tag": "new",
       "tagType": "new",
@@ -65,6 +69,7 @@
       "name": "Freelancer Toolkit",
       "description": "Manage freelance work efficiently using essential tools and templates",
       "price": 12.99,
+      "quantity": 1,
       "period": "monthly",
       "tag": "popular",
       "tagType": "popular",
@@ -80,6 +85,7 @@
       "name": "Job Tracker Pro",
       "description": "Track job applications effectively and stay updated with progress",
       "price": 7.99,
+      "quantity": 1,
       "period": "monthly",
       "tag": "best seller",
       "tagType": "best seller",
@@ -95,6 +101,7 @@
       "name": "Interview Prep AI",
       "description": "Practice interviews confidently using smart AI based feedback tools",
       "price": 29.99,
+      "quantity": 1,
       "period": "yearly",
       "tag": "popular",
       "tagType": "popular",
@@ -110,6 +117,7 @@
       "name": "Ultimate Career Suite",
       "description": "Access complete career tools package for professional growth success",
       "price": 99.99,
+      "quantity": 1,
       "period": "yearly",
       "tag": "best seller",
       "tagType": "best seller",
@@ -119,66 +127,6 @@
         "Premium template access"
       ],
       "icon": "👑"
-    },
-    {
-      "id": 9,
-      "name": "Cover Letter Pro",
-      "description": "Write impactful cover letters quickly using smart guided templates",
-      "price": 5.99,
-      "period": "one-time",
-      "tag": "new",
-      "tagType": "new",
-      "features": [
-        "30+ letter templates",
-        "Smart content suggestions",
-        "Export files PDF"
-      ],
-      "icon": "✉️"
-    },
-    {
-      "id": 10,
-      "name": "LinkedIn Optimizer",
-      "description": "Improve LinkedIn profiles using targeted optimization tools and insights",
-      "price": 11.99,
-      "period": "monthly",
-      "tag": "popular",
-      "tagType": "popular",
-      "features": [
-        "Profile performance analysis",
-        "Keyword optimization tools",
-        "Headline writing suggestions"
-      ],
-      "icon": "🔗"
-    },
-    {
-      "id": 11,
-      "name": "Skill Assessment Pack",
-      "description": "Evaluate professional skills accurately with structured tests and reports",
-      "price": 15.99,
-      "period": "yearly",
-      "tag": "best seller",
-      "tagType": "best seller",
-      "features": [
-        "Skill evaluation tests",
-        "Detailed performance reports",
-        "Verified certification badges"
-      ],
-      "icon": "🏆"
-    },
-    {
-      "id": 12,
-      "name": "Remote Job Finder",
-      "description": "Discover remote job opportunities tailored to your skills globally",
-      "price": 8.99,
-      "period": "monthly",
-      "tag": "new",
-      "tagType": "new",
-      "features": [
-        "Remote job listings",
-        "Daily job alerts",
-        "Advanced search filters"
-      ],
-      "icon": "🌐"
     }
   ]
 }

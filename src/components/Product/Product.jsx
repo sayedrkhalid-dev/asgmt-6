@@ -1,8 +1,9 @@
 import { Check } from "lucide-react";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
-const Product = ({ product, addToCart }) => {
-  const [isPurchased, setIsPurchased] = useState(false);
+const Product = ({ product, addToCart, hasToCart }) => {
+  const [label, setLabel] = useState("Buy Now");
 
   const badge = {
     new: "bg-green-100 border-green-300 text-green-500",
@@ -54,15 +55,18 @@ const Product = ({ product, addToCart }) => {
         </ul>
 
         {/* Buy now button */}
-
         <button
-          className="btn border-0 p-0.5 bg-gradient text-gray-50 font-semibold px-6 py-2 rounded-full shadow-md shadow-purple-400 cursor-pointer"
+          className={`btn border-0 p-0.5 bg-green-500 text-gray-50 font-semibold px-6 py-2 rounded-full shadow-md shadow-purple-400 cursor-pointer transition-colors duration-300
+          ${label === "Buy Now" && "bg-gradient"}`}
           onClick={() => {
             addToCart(product);
-            setIsPurchased(true);
+            setLabel(hasToCart(product) ? "Already added" : "Added to Cart");
+            !hasToCart(product)
+              ? toast.success("Successfully Added to Cart")
+              : toast.warning("Already added");
           }}
         >
-          {isPurchased ? "Purchased" : "Buy Now"}
+          {label}
         </button>
       </div>
     </li>

@@ -2,41 +2,35 @@ import { use, useState } from "react";
 import Product from "../components/Product/Product";
 import Cart from "../components/Cart/Cart";
 
-const Products = ({ productsPromise }) => {
+const Products = ({
+  productsPromise,
+  cart,
+  hasToCart,
+  addToCart,
+  removeFromCart,
+  updateQuantity,
+}) => {
   const { products } = use(productsPromise);
   const [activeTab, setActiveTab] = useState("products");
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (product) => setCart((cart) => [...cart, product]);
-  const removeToCart = (product) =>
-    setCart((cart) => cart.filter((item) => item.id !== product.id));
 
   return (
     <section>
       <div className="w-full max-w-10/12 mx-auto my-4 py-4 flex flex-col gap-8">
-        <div className="flex flex-col justify-center-center items-center gap-4">
-          {/* title */}
+        <div className="flex flex-col justify-center items-center gap-4">
           <h1 className="text-2xl md:text-3xl/snug lg:text-4xl/snug tracking-wide font-bold text-center">
             Premium Digital Tools
           </h1>
-
-          {/* description */}
           <p className="text-gray-700 text-center lg:px-30">
             Choose from our curated collection of premium digital products
             designed to boost your productivity and creativity.
           </p>
-
-          {/* buttons */}
           <div className="flex gap-2 bg-gray-200 p-1 rounded-full">
-            {/* Primary button */}
             <button
               onClick={() => setActiveTab("products")}
               className={`font-semibold px-6 py-2 rounded-full cursor-pointer transition-all duration-300 ${activeTab === "products" ? "bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow-sm shadow-blue-500/50 hover:shadow-md" : "bg-transparent text-gray-900"}`}
             >
               Products
             </button>
-
-            {/* Primary button outlined */}
             <button
               onClick={() => setActiveTab("cart")}
               className={`font-semibold px-6 py-2 rounded-full cursor-pointer transition-all duration-300 ${activeTab === "cart" ? "bg-linear-to-r from-blue-500 to-purple-500 text-gray-50 shadow-sm shadow-blue-500/50" : "bg-transparent text-gray-700"}`}
@@ -53,6 +47,7 @@ const Products = ({ productsPromise }) => {
                 <Product
                   key={product.id}
                   product={product}
+                  hasToCart={hasToCart}
                   addToCart={addToCart}
                 />
               ))}
@@ -60,8 +55,8 @@ const Products = ({ productsPromise }) => {
           ) : (
             <Cart
               cart={cart}
-              addToCart={addToCart}
-              removeToCart={removeToCart}
+              removeFromCart={removeFromCart}
+              updateQuantity={updateQuantity}
             />
           )}
         </div>
