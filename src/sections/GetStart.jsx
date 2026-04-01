@@ -28,7 +28,7 @@ const steps = [
 const GetStart = () => {
   return (
     <section>
-      <div className="w-full max-w-10/12 mx-auto my-4 py-4 flex flex-col gap-8">
+      <div className="w-full max-w-10/12 mx-auto my-8 py-8 flex flex-col gap-8">
         {/* Header */}
         <div className="flex flex-col justify-center items-center gap-4">
           <h1 className="text-2xl md:text-3xl/snug lg:text-4xl/snug tracking-wide font-bold text-center">
@@ -44,7 +44,7 @@ const GetStart = () => {
           {steps.map((step) => (
             <div
               key={step.id}
-              className="card flex items-center justify-center text-center gap-2 bg-gray-100 p-8 rounded-xl border border-gray-300 relative"
+              className="relative card flex items-center justify-center text-center gap-2 bg-gray-100 p-8 rounded-xl border border-gray-300 transition-all duration-300 shadow-md hover:-translate-y-0.5 hover:shadow-xl"
             >
               {/* Step number badge */}
               <span className="absolute top-4 right-4 flex items-center justify-center w-8 h-8 text-sm bg-gradient text-gray-50 border font-semibold rounded-full">
