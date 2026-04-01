@@ -4,11 +4,6 @@
 
 **All-in-One Online Utility Platform**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge&logo=netlify&logoColor=white)](https://your-site.netlify.app)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
-
 A fast, clean collection of everyday utilities for developers, students, and general users — no installs, no sign-ups.
 
 </div>
@@ -18,32 +13,6 @@ A fast, clean collection of everyday utilities for developers, students, and gen
 ## Overview
 
 Digi Tools simplifies common tasks like encoding, decoding, hashing, and text transformation — all accessible from a single, responsive web app.
-
----
-
-## Features
-
-### Encoders & Decoders
-
-- Base64 Encoder / Decoder
-- URL Encoder / Decoder
-
-### Converters
-
-- Image to Base64
-- Markdown to HTML
-- Text Case Converter (Uppercase / Lowercase)
-
-### Generators
-
-- Random Number Generator
-- MD5 & SHA Hash Generators
-
-### Developer Utilities
-
-- User Agent Info
-- Timezone Detection
-- IP Information
 
 ---
 
@@ -88,29 +57,13 @@ npm run dev
 
 ## Deployment
 
-Hosted on **Netlify** with automatic deployments from GitHub.
+**Netlify**
+
+### Live link : https://asgmt-6-digi-tools.netlify.app/
 
 1. Push your code to GitHub
 2. Connect the repository to Netlify
 3. Deploy with one click
-
----
-
-## Use Cases
-
-- Developers who need quick encoding, hashing, or formatting tools
-- Students working with data and text transformations
-- Anyone who wants lightweight utilities without installing software
-
----
-
-## Roadmap
-
-- [ ] JSON Formatter & Validator
-- [ ] QR Code Generator
-- [ ] Dark / Light theme toggle
-- [ ] User favorites & history
-- [ ] API integrations for advanced utilities
 
 ---
 
